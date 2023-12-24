@@ -1,12 +1,17 @@
-import { BaseEntity, CreateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  CreateDateColumn,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 export class CommonEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @CreateDateColumn('timestamp')
+  @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;
 
-  @CreateDateColumn('timestamp')
+  @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
 }
