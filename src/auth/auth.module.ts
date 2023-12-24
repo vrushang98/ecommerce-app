@@ -13,6 +13,7 @@ import { JWTStrategy } from './strategies/jwt.strategy';
   controllers: [AuthController],
   providers: [AuthService, ConfigService, JWTStrategy],
   imports: [
+    ConfigModule,
     TypeOrmModule.forFeature([User, Role]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({

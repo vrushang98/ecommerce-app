@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ormConfig } from './orm.config';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ormConfig } from './orm.config';
       useFactory: ormConfig,
       inject: [ConfigService],
     }),
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService],

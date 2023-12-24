@@ -4,7 +4,7 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Strategy, ExtractJwt } from 'passport-jwt';
 
 @Injectable()
-export class JWTStrategy extends PassportStrategy(Strategy) {
+export class JWTStrategy extends PassportStrategy(Strategy, 'jwt-strategy') {
   constructor(private readonly configService: ConfigService) {
     super({
       secretOrKey: configService.get('JWT_SECRET'),
