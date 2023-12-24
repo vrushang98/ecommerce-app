@@ -43,6 +43,15 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
+
+```
+
+## Running Migrations
+
+```bash
+# run migration
+$ yarn build && yarn migrations:run
+
 ```
 
 ## Test
